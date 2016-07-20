@@ -1,0 +1,15 @@
+.tooltip-engine-container {
+    position: absolute;;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip-engine-container .content {
+    min-width: 120px;
+    width: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}

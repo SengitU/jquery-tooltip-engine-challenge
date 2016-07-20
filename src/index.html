@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Basic HTML Form">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic HTML Form</title>
+    <link rel="stylesheet" href="css/tooltip-engine.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="lib/tooltip-engine.source.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $.tooltipEngine.applyDefinedTooltips(".tooltip-engine");
+        $.tooltipEngine.createScriptedTooltip("#functionTooltip", function() {
+            return "Your random number is:" + Math.floor((Math.random() * 100) + 1);
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="app">
+        <div class="example">
+            <div class="tooltip-engine" data-tooltip-source="Tooltip" data-tooltip-pos="right">Tooltip from text</div>
+        </div>
+        <div class="example">
+            <div class="tooltip-engine" data-tooltip-source="#tooltip_source" data-tooltip-type="selector" data-tooltip-pos="left">Tooltip from selector</div>
+        </div>
+        <div class="example">
+            <div class="tooltip-engine" data-tooltip-source="sampleResponse.html" data-tooltip-type="ajax" data-tooltip-pos="bottom">Tooltip from ajax call</div>
+        </div>
+        <div class="example">
+            <div id="functionTooltip">Tooltip from executed script</div>
+        </div>
+        <span id="tooltip_source">Selector tooltip example</span>
+    </div>
+</body>
+</html>
